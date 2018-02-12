@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import '../App.css'
-import FeedbackList from "./Form/FeedbackList";
+import FeedbackList from "./FeedbackList";
 
 export default class Contact extends Component {
     constructor() {
