@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import '../App.css'
-// import FeedbackList from "./Form/FeedbackList";
-import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+import FeedbackList from "./Form/FeedbackList";
 
 export default class Contact extends Component {
     constructor() {
@@ -19,13 +18,13 @@ export default class Contact extends Component {
                     id: 1,
                     name: 'Evgeniy',
                     email: 'yark1y@i.ua',
-                    company: 'none',
-                    message: 'You are great!'
+                    company: 'Quantag IT Solutions',
+                    message: 'Super!'
                 },
                 {
                     id: 2,
-                    name: 'Evgeniy',
-                    email: 'yark1y@i.ua',
+                    name: 'Mariya',
+                    email: 'mariyay@i.ua',
                     company: 'none',
                     message: 'You are great!'
                 }
@@ -53,7 +52,13 @@ export default class Contact extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         let feedbacks = this.state.feedbacks.slice();
-        feedbacks.push({id: this.state.nextID, name: this.state.formValues.name, email: this.state.formValues.email, company: this.state.formValues.company, message: this.state.formValues.message});
+        feedbacks.push({
+            id: this.state.nextID,
+            name: this.state.formValues.name,
+            email: this.state.formValues.email,
+            company: this.state.formValues.company,
+            message: this.state.formValues.message
+        });
         this.setState({
             feedbacks: feedbacks,
         });
@@ -73,36 +78,44 @@ export default class Contact extends Component {
 
     render() {
         return (
-            <div className="container">
-                <h4>Github</h4>
-                <h4>Facebook</h4>
-                <h4>Twitter</h4>
-                <h4>LinkedIn</h4>
-                <h4>
+            <div className="contacts">
+                <div className="contacts-socnet">
+                    <h4>Github</h4>
+                    <h4>Facebook</h4>
+                    <h4>Twitter</h4>
+                    <h4>LinkedIn</h4>
+                </div>
+                <h4 className="contacts-form">
                     <form onSubmit={this.handleSubmit}>
                         <input type="text" name="name" value={this.state.formValues.name}
-                               onChange={this.handleInputChange}/>
+                               onChange={this.handleInputChange} placeholder="Full name"/>
                         <input type="email" name="email" value={this.state.formValues.email}
-                               onChange={this.handleInputChange}/>
+                               onChange={this.handleInputChange} placeholder="E-mail"/>
                         <input type="text" name="company" value={this.state.formValues.company}
-                               onChange={this.handleInputChange}/>
+                               onChange={this.handleInputChange} placeholder="Company"/>
                         <input type="text" name="message" value={this.state.formValues.message}
-                               onChange={this.handleInputChange}/>
+                               onChange={this.handleInputChange} placeholder="Leave message"/>
                         <input type="submit" value="Add"/>
                     </form>
-                    {/*<FeedbackList*/}
-                    {/*data={this.state.feedbacks}*/}
-                    {/*/>*/}
-                    <BootstrapTable data={this.state.feedbacks} striped={true} hover={true}>
-                        <TableHeaderColumn dataField="name" dataAlign="center" dataSort={true}>Name</TableHeaderColumn>
-                        <TableHeaderColumn dataField="company" dataAlign="center"
-                                           dataSort={true}>Company</TableHeaderColumn>
-                        <TableHeaderColumn dataField="email" dataAlign="center" dataSort={true}
-                                           isKey={true}>E-mail</TableHeaderColumn>
-                        <TableHeaderColumn dataField="message" dataAlign="center"
-                                           dataSort={true}>Message</TableHeaderColumn>
-                    </BootstrapTable>
                 </h4>
+                <div className="contacts-table">
+                    <table className="table">
+                        <thead className="table-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Company</th>
+                            <th scope="col">Message</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <FeedbackList
+                            data={this.state.feedbacks}
+                        />
+                        </tbody>
+                    </table>
+                </div>
             </div>
         )
     }

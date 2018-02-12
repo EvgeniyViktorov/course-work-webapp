@@ -1,3 +1,25 @@
 .projects-items-wrapper {
     display: flex;
 }
+
+.contacts {
+    display: flex;
+}
+
+.contacts-socnet {
+    flex: 1;
+    background-color: #ffcfd4;
+}
+
+.contacts-socnet h4 {
+    margin: 0 auto;
+    align-content: center;
+}
+
+.contacts-form {
+    flex: 2;
+}
+
+.contacts-table {
+    flex: 4;
+}

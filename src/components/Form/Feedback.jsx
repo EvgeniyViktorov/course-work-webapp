@@ -2,12 +2,13 @@ import React from 'react';
 
 const Feedback = (props) => {
     return (
-        <div>
-            <p>{props.name}</p>
-            <p>{props.email}</p>
-            <p>{props.company}</p>
-            <p>{props.message}</p>
-        </div>
+        <tr>
+            <td>{props.id}</td>
+            <td>{props.name}</td>
+            <td>{props.email}</td>
+            <td>{props.company}</td>
+            <td>{props.message}</td>
+        </tr>
     );
 };
 
