@@ -1,25 +1,83 @@
+.aboutTitle {
+    margin: 1% 0 1% 45%;
+}
+.header-alignment {
+    margin-left: 60%;
+}
+
+.header-links-alignment {
+    margin-left: 80%;
+}
+
+.about {
+    display: flex;
+}
+
 .projects-items-wrapper {
     display: flex;
 }
 
+.projects-items-wrapper div {
+    margin: 1% 1% 1% 1%;
+    padding:1% 1% 1% 1%;
+
+    box-shadow: 3px 3px 7px gray;
+}
+
+.projects-items-wrapper p {
+    flex: 1;
+
+}
+
+textarea {
+    width: 269px;
+    height: 250px;
+}
+
+.about-wrapper {
+    flex: 11;
+    border: 1px solid gray;
+    box-shadow: 1px 3px 3px gray;
+    margin-right: 2%;
+    padding: 1% 1% 1% 1%;
+}
+
 .contacts {
     display: flex;
+    flex: 1;
 }
 
 .contacts-socnet {
     flex: 1;
-    background-color: #ffcfd4;
+    padding-right: 0;
+    margin-left: 2%;
 }
 
-.contacts-socnet h4 {
-    margin: 0 auto;
-    align-content: center;
+.contacts-socnet a {
+    margin: 2% 3% 5% 2%;
 }
 
 .contacts-form {
-    flex: 2;
+    margin-left: 1%;
+    margin-top: 1%;
+    flex: 3;
 }
 
 .contacts-table {
-    flex: 4;
+    margin-right: 6%;
+    margin-top: 1%;
+    box-shadow: 1px 3px 2px gray;
+    flex: 7;
+}
+
+.add-button {
+    border-radius: 7%;
+    box-shadow: 2px 3px 3px black;
+    width: 200px;
+}
+
+.form * {
+    margin-left: 10%;
+    margin-top: 1%;
+    box-shadow: 2px 3px 3px black;
 }

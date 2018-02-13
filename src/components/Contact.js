@@ -62,6 +62,7 @@ export default class Contact extends Component {
         this.setState({
             feedbacks: feedbacks,
         });
+        this.handleDataReset();
     };
 
     handleDataReset = () => {
@@ -79,23 +80,17 @@ export default class Contact extends Component {
     render() {
         return (
             <div className="contacts">
-                <div className="contacts-socnet">
-                    <h4>Github</h4>
-                    <h4>Facebook</h4>
-                    <h4>Twitter</h4>
-                    <h4>LinkedIn</h4>
-                </div>
                 <h4 className="contacts-form">
-                    <form onSubmit={this.handleSubmit}>
+                    <form id="form" className="form" onSubmit={this.handleSubmit}>
                         <input type="text" name="name" value={this.state.formValues.name}
-                               onChange={this.handleInputChange} placeholder="Full name"/>
+                               onChange={this.handleInputChange} placeholder="Full name"/><br/>
                         <input type="email" name="email" value={this.state.formValues.email}
-                               onChange={this.handleInputChange} placeholder="E-mail"/>
+                               onChange={this.handleInputChange} placeholder="E-mail"/><br/>
                         <input type="text" name="company" value={this.state.formValues.company}
-                               onChange={this.handleInputChange} placeholder="Company"/>
-                        <input type="text" name="message" value={this.state.formValues.message}
-                               onChange={this.handleInputChange} placeholder="Leave message"/>
-                        <input type="submit" value="Add"/>
+                               onChange={this.handleInputChange} placeholder="Company"/><br/>
+                        <textarea form="form" type="text" name="message" value={this.state.formValues.message}
+                                  onChange={this.handleInputChange} placeholder="Leave message"/><br/>
+                        <input className="add-button" type="submit" value="Add"/><br/>
                     </form>
                 </h4>
                 <div className="contacts-table">
